@@ -10,7 +10,7 @@ public class PlayerSpawn : MonoBehaviour
     Transform[] spawnPositions;
    public bool isRespawn = false;
     public bool isSRespawnToggle = false;
-    int k;
+    //int k;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +21,14 @@ public class PlayerSpawn : MonoBehaviour
         
     }
 
-    private int RandomSpawn()
+    private void RandomSpawn()
     {
         int i = UnityEngine.Random.Range(1, spawnPositions.Length);
         
         Debug.Log(spawnPositions[i].transform.position);
         transform.position = spawnPositions[i].transform.position;
 
-        return (i);
+        //return (i);
 
 
     }
@@ -47,9 +47,9 @@ public class PlayerSpawn : MonoBehaviour
         }*/
         if(Input.GetKeyUp(KeyCode.Space))
         {
-            k = RandomSpawn();
+            RandomSpawn();
         }
-        transform.position = spawnPositions[k].transform.position;
+        
         
     }
 }
